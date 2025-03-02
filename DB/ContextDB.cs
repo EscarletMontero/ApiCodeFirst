@@ -15,7 +15,7 @@ namespace GestionDeUsuarioAPI.DB
         {
             modelBuilder.Entity<Usuario>()
                 .HasIndex(u => u.Correo)
-                .IsUnique(); // Evita emails duplicados
+                .IsUnique(); // Para que los emails sean unicos no duplicados
         }
     }
 }
