@@ -19,14 +19,14 @@ namespace GestionDeUsuarioAPI.Controllers
             _context = context;
         }
 
-        // GET: api/usuarios
+        // GET
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
             return await _context.Usuarios.ToListAsync();
         }
 
-        // GET: api/usuarios/{id}
+        // GET
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -40,7 +40,7 @@ namespace GestionDeUsuarioAPI.Controllers
             return usuario;
         }
 
-        // POST: api/usuarios
+        // POST
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
@@ -55,7 +55,7 @@ namespace GestionDeUsuarioAPI.Controllers
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.Id }, usuario);
         }
 
-        // PUT: api/usuarios/{id}
+        // PUT
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -82,7 +82,7 @@ namespace GestionDeUsuarioAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/usuarios/{id}
+        // DELETE
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
